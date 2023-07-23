@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>
+            Movie List
+        </title>
+    
+    </head>    
+
+<body onload="search_on_key_up()">
+    <div class="heading">
+        <h1>Movie List API APP</h1>
+        <div>
+        <input type="text" placeholder="Search.." class="search_movie" id="search_movie_here_input">
+        <button type="submit" class="search_container_button" onclick="search_movie()">Submit</button>
+    </div>
+    </div>
+    
+    <div class="add_movies_in_it" id="add_10_movie_in_it">
+    </div>
+    <div class="align_page_buton" id="align_page_buton">
+        <div class="pagination">
+            <button id="next_button" onclick="go_to_next_page()">❯</button></div>
+        <div class="current_page" id="current_page_shown">1</div>
+        <div class="pagination">
+            <button id="prev_button" onclick="go_to_prev_page()">❮</button>
+        </div>
+       
+</div>
+    
+
+
+
+
+    <script src="home.js"></script>
+</body>
+
+
+</html>

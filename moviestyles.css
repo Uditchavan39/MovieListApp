@@ -1,0 +1,39 @@
+body{
+    background-color: antiquewhite;
+    width: 100%;
+
+}
+
+.movie_poster{
+    width: max-content;
+    height: max-content;
+    background-color: aqua;
+    align-self: center;
+    margin: auto;
+}
+.movie_heading{
+    min-height: 50px;
+    min-width: auto;
+    width: 400px;
+    margin: auto;
+    border: 2px solid;
+    border-radius: 20px;
+}
+.movie_info{
+    border: 2px solid;
+    border-radius: 20px;
+    min-height: 400px;
+    min-width: auto;
+    width: 400px;
+    margin: auto;
+    padding: 15px;
+}
+p{
+  padding-left: 25px;
+}
+.add_comments{
+  min-width: 50%;
+  align-self: center;
+  height: max-content;
+  line-height: 25px;
+}

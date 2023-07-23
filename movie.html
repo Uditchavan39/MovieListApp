@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="moviestyles.css">
+        <title>
+            Movie List
+        </title>
+    
+    </head>    
+
+<body onload="movie_description()">
+    <div class="movie_poster" id="movie_poster_id"></div>
+    <div class="movie_heading" id="movie_heading_id"></div>
+<div style=" display: flex; flex-direction: row;">
+    <div class="movie_info" id="movie_info_id"></div>    
+  <div class="movie_info" id="movie_comments_show"></div>
+</div>  
+<div style="width: 100%; display: flex; flex-direction: row; justify-content: center;">  
+<input type="text" placeholder="Add Comments" class="add_comments" id="comment_movie_here_input">
+    <button type="submit" class="comment_container_button" onclick="add_comment()">Submit</button>
+</div>
+    <script src="movie.js"></script>
+</body>
+
+
+</html>
