@@ -39,6 +39,7 @@ cursor: pointer;
     border: none;
     margin-top: 8px;
     font-size: 17px;
+    border-radius: 5px;
   }
 .search_container_button {
     padding: 6px;
@@ -46,6 +47,8 @@ cursor: pointer;
     font-size: 17px;
     border: none;
     margin: 0;
+    font-weight: 500;
+    border-radius: 5px;
   }
   .pagination {
     display: inline-block;

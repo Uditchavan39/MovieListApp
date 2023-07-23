@@ -9,7 +9,9 @@ function add_movies_view_in_page(search_item,page_num){
     movie_list_view.innerHTML='';
     if(!fetching)
     fetch_movie_list(search_item,page_num);
-
+    let page=document.getElementById("align_page_buton");
+    page.style.display="flex";
+    
     for(i=0;i<10;i++){
         let movie_box=create_single_movie_elem(i);
     movie_list_view.appendChild(movie_box);
@@ -44,6 +46,8 @@ async function fetch_movie_list(search,page_num){
     for(i=0;i<movies["Search"].length;i++){
         movie_id_data[i]=movies["Search"][i].imdbID;
     }
+}else{
+    alert(movies.Error);
 }
     fetching=false;
 
@@ -82,16 +86,20 @@ function go_to_prev_page(){
 }
 }
 function search_on_key_up(){
+    let page=document.getElementById("align_page_buton");
+    page.style.display="none";
     search_field.addEventListener("keyup",function(){
        if(search_field.value.length>2 && !fetching){
         console.log(search_field.value);
 
             add_movies_view_in_page(search_field.value,1);
-       }
+        }
+
     });
     if(search_field.value.length>2){
         add_movies_view_in_page(search_field.value,1);
     }
+    
 }
 function search_movie(){
     if(search_field.value.length>2 && !fetching)

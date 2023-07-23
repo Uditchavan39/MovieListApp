@@ -1,4 +1,3 @@
-var comment_list=[]
 var movie_identity="";
 function movie_description(){
     const queryString=window.location.search;
@@ -7,11 +6,15 @@ function movie_description(){
     movie_identity=movie_id;
     fetch_single_movie_info(movie_id);
     show_comments(movie_id);
+    show_rating();
 }
+
 async function fetch_single_movie_info(id){
     const response=await fetch("https://www.omdbapi.com/?i="+id+"&apikey=14081cd5&");
     const movies=await response.json();
+    if(movies.Response="True")
     push_movie_details_in_view(movies);
+    else
     console.log(movies);
 }
 function push_movie_details_in_view(movies){
@@ -78,4 +81,28 @@ function push_movie_details_in_view(movies){
        }
 
     }
- 
+function add_rating_to_movie(){
+    let star0=document.getElementById("star_0");
+    let star1=document.getElementById("star_1");     
+    let star2=document.getElementById("star_2");
+    let star3=document.getElementById("star_3");
+    let star4=document.getElementById("star_4");
+localStorage.setItem("star0"+movie_identity,star0.checked);
+localStorage.setItem("star1"+movie_identity,star1.checked);
+localStorage.setItem("star2"+movie_identity,star2.checked);
+localStorage.setItem("star3"+movie_identity,star3.checked);
+localStorage.setItem("star4"+movie_identity,star4.checked);
+
+}
+ function show_rating(){
+    let generate_star_here=document.getElementById("generate_star_here");
+    generate_star_here.innerHTML='';
+    for(i=0;i<5;i++){
+      let che=localStorage.getItem("star"+i+movie_identity);
+      if(che=="true")  
+    generate_star_here.innerHTML+="<input class=star type=checkbox checked id=star_"+i+">";    
+        else{
+            generate_star_here.innerHTML+="<input class=star type=checkbox  id=star_"+i+">";    
+        }
+}
+}
